@@ -1,0 +1,14 @@
+org: sivakrishna
+app: afflr
+service: producer-webhook
+frameworkVersion: '3'
+plugins:
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs18.x
+functions:
+  api:
+    handler: dist/serverless.handler
+    events:
+      - httpApi: '*'
