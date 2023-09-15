@@ -1,7 +1,7 @@
 import { ClientKafka } from '@nestjs/microservices';
 import { Logger, OnApplicationShutdown } from '@nestjs/common';
 import { get as _get, reduce as _reduce } from 'lodash';
-// import { KafkaOptions } from './types';
+// import { KafkaOptions } from './types';,jkjkjkkjkkkj
 import {
   Consumer,
   ConsumerSubscribeTopics,
@@ -44,7 +44,7 @@ export class KafkaClient implements OnApplicationShutdown {
     });
   }
 
-  //  consume message under a topic
+  //  consume message under a topic    h
   public async consume<T>(
     topics: ConsumerSubscribeTopics[] | ConsumerSubscribeTopics,
     groupId: string,
