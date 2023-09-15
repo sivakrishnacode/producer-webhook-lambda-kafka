@@ -12,8 +12,8 @@ import { VerifyHmac } from 'src/middleware/verify-hmac.middleware';
 
 /* Services */
 import { WebhooksService } from './webhooks.service';
-import { KafkaClient } from 'src/clients/kafka-client';
-import { EventMessageModule } from 'src/clients/EventMessageModule';
+import { KafkaClient } from 'src/event-message/kafka-client';
+import { EventMessageModule } from 'src/event-message/EventMessageModule';
 
 @Module({
   imports: [

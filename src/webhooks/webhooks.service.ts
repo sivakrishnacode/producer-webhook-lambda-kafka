@@ -1,6 +1,6 @@
 import { Inject, Injectable, Req, Res } from '@nestjs/common';
 import { ClientKafka } from '@nestjs/microservices';
-import { KafkaClient } from 'src/clients/kafka-client';
+import { KafkaClient } from 'src/event-message/kafka-client';
 import KafkaMessageType from 'src/types/kafka-message-type';
 
 @Injectable()
