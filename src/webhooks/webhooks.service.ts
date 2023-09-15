@@ -1,4 +1,5 @@
 import { Inject, Injectable, Req, Res } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { KafkaClient } from 'src/event-message/kafka-client';
 
 @Injectable()
@@ -7,25 +8,27 @@ export class WebhooksService {
     @Inject('KAFKA_CLIENT') private readonly kafkaClient: KafkaClient,
   ) {}
 
-  async appUninstall(@Req() req, @Res() res) {
+  async appUninstall(@Req() req: Request, @Res() res: Response) {
     try {
-      console.log(req.body);
+      await this.kafkaClient
+        .produce('app_uninstalled', req.body, 'my-string')
+        .catch((err) => console.error(err));
 
-      await this.kafkaClient.produce('app_uninstalled', req.body, 'my-string');
-
-      console.log('app uninstall webhook called ');
-      res.send({ data: 'appUnInstalled webhook responce' });
-      return;
+      console.log('--->>> app_uninstalled Webhook Called');
+      res.send({ data: 'app_uninstalled webhook responce' });
     } catch (error) {
       console.log(error);
     }
   }
 
-  async shopUpdate(@Req() req, @Res() res) {
+  async shopUpdate(@Req() req: Request, @Res() res: Response) {
     try {
-      // this.webHookClient.emit('shop_update', req.body);
-      console.log('shop Update webhook called');
-      res.send({ data: 'shopUpdate webhook responce' });
+      await this.kafkaClient
+        .produce('shop_update', req.body, 'my-string')
+        .catch((err) => console.error(err));
+
+      console.log('--->>> shop_update Webhook Called');
+      res.send({ data: 'shop_update webhook responce' });
     } catch (error) {
       console.log(error);
     }
