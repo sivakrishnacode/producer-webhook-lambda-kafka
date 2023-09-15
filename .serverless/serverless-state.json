@@ -220,7 +220,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/producer-webhook/dev/1694690038921-2023-09-14T11:13:58.921Z/producer-webhook.zip"
+                "S3Key": "serverless/producer-webhook/dev/1694775177681-2023-09-15T10:52:57.681Z/producer-webhook.zip"
               },
               "Handler": "s_api.handler",
               "Runtime": "nodejs18.x",
@@ -238,14 +238,14 @@
               "ApiLogGroup"
             ]
           },
-          "ApiLambdaVersion9uJbtcrR8Im5AliQIyc9dTrcejeGclXTinUT1ryJE": {
+          "ApiLambdaVersion6kELlG0sMmsG8Pqc6y7HkF6VvD4AZueYVL0uiibXXjI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "qth+MBsv2iNeCjkvjUSQzGYZPbPqCFlyVro7meaUPks="
+              "CodeSha256": "0xRDvmS1IvpWCoo7NfLCK+T+nhmoWNK8IssxKO1Dcbo="
             }
           },
           "HttpApi": {
@@ -400,7 +400,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersion9uJbtcrR8Im5AliQIyc9dTrcejeGclXTinUT1ryJE"
+              "Ref": "ApiLambdaVersion6kELlG0sMmsG8Pqc6y7HkF6VvD4AZueYVL0uiibXXjI"
             },
             "Export": {
               "Name": "sls-producer-webhook-dev-ApiLambdaFunctionQualifiedArn"
@@ -550,7 +550,7 @@
         "timeout": 6,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersion9uJbtcrR8Im5AliQIyc9dTrcejeGclXTinUT1ryJE"
+        "versionLogicalId": "ApiLambdaVersion6kELlG0sMmsG8Pqc6y7HkF6VvD4AZueYVL0uiibXXjI"
       }
     },
     "configValidationMode": "warn",
@@ -580,7 +580,7 @@
     "artifact": "/home/cartrabbit/Projects/aws/producer-webhook/.serverless/producer-webhook.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/producer-webhook/dev/1694690038921-2023-09-14T11:13:58.921Z",
+    "artifactDirectoryName": "serverless/producer-webhook/dev/1694775177681-2023-09-15T10:52:57.681Z",
     "artifact": "producer-webhook.zip"
   }
 }

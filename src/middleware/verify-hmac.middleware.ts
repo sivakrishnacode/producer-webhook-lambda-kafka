@@ -14,6 +14,8 @@ export class VerifyHmac implements NestMiddleware {
   use(req: CustomRequest, res: Response, next: NextFunction) {
     console.log('------->>  Middleware Called');
 
+    // console.log(JSON.parse(Buffer(req.originalBody).toString('utf-8')));
+
     // try {
     //   const generateHash = crypto
     //     .createHmac(
