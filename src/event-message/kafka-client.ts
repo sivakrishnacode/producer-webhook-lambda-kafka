@@ -25,7 +25,10 @@ export class KafkaClient implements OnApplicationShutdown {
 
   constructor(options: any) {
     this.config = new ConfigService();
-    this.kafkaClient = new ClientKafka({ ...options });
+    this.kafkaClient = new ClientKafka({
+      ...options,
+      logLevel: logLevel.ERROR,
+    });
     this.client = this.client ?? this.kafkaClient.createClient();
     this.producer =
       this.producer ??

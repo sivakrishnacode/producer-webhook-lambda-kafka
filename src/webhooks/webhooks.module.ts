@@ -1,9 +1,4 @@
-import {
-  Inject,
-  MiddlewareConsumer,
-  Module,
-  OnModuleInit,
-} from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 
 import { WebhooksController } from './webhooks.controller';
 
@@ -13,7 +8,7 @@ import { VerifyHmac } from 'src/middleware/verify-hmac.middleware';
 /* Services */
 import { WebhooksService } from './webhooks.service';
 import { KafkaClient } from 'src/event-message/kafka-client';
-import { EventMessageModule } from 'src/event-message/EventMessageModule';
+import { EventMessageModule } from 'src/event-message/event-message-module';
 
 @Module({
   imports: [
